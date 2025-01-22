@@ -1,14 +1,10 @@
 #ifndef CPUSET_H
 #define CPUSET_H
 
-#include <array>
-#include <optional>
-#include <string>
-#include <tuple>
+#include <stdlib.h>
 
-extern const std::string kCpuSetPath;
+extern const char *kCpuSetPath;
 
-std::tuple<std::optional<std::array<int, 512>>, int, int>
-ReadCpuSet(const std::string path);
+int ReadCpuSet(int *cpus, size_t *length, const char *path);
 
 #endif
